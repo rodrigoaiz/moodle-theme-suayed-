@@ -22,7 +22,19 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <main class="max-w-7xl mx-auto p-6">
-        <?php echo $OUTPUT->main_content(); ?>
+        <div class="flex gap-6">
+            <div class="flex-1">
+                <?php echo $OUTPUT->main_content(); ?>
+            </div>
+            <?php
+            $hasblocks = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
+            if ($hasblocks) {
+            ?>
+            <aside class="w-64 bg-white rounded-lg shadow p-4">
+                <?php echo $OUTPUT->blocks_for_region('side-pre'); ?>
+            </aside>
+            <?php } ?>
+        </div>
     </main>
 
     <footer class="bg-blue-800 text-white text-sm p-4 mt-12">
