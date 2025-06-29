@@ -5,7 +5,6 @@ $THEME->editor_sheets = [];
 $THEME->parents = ['boost'];
 $THEME->enable_dock = false;
 $THEME->yuicssmodules = array();
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->scss = function($theme) {
     return theme_config::load_scss_from_file(__DIR__ . '/scss/custom.scss');
 };

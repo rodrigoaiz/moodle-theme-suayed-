@@ -2,10 +2,14 @@
 // This is a Moodle theme layout file
 defined('MOODLE_INTERNAL') || die();
 
-// Get the renderer - this is the correct way in Moodle
-echo $OUTPUT->doctype();
-echo $OUTPUT->header();
-?>
+echo $OUTPUT->doctype() ?>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
+<head>
+    <title><?php echo $OUTPUT->page_title(); ?></title>
+    <?php echo $OUTPUT->standard_head_html(); ?>
+</head>
+<body <?php echo $OUTPUT->body_attributes(); ?>>
+<?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <div class="min-h-screen bg-gray-100 text-gray-800">
     <header class="bg-blue-700 text-white p-4 shadow">
@@ -28,5 +32,6 @@ echo $OUTPUT->header();
     </footer>
 </div>
 
-<?php
-echo $OUTPUT->footer();
+<?php echo $OUTPUT->standard_end_of_body_html(); ?>
+</body>
+</html>
