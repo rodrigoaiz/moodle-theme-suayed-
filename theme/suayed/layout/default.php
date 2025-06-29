@@ -1,7 +1,9 @@
 <?php
-require_once($CFG->libdir . '/outputrenderers.php');
+// This is a Moodle theme layout file
+defined('MOODLE_INTERNAL') || die();
 
-$OUTPUT = $PAGE->get_renderer('core');
+// Get the renderer - this is the correct way in Moodle
+echo $OUTPUT->doctype();
 echo $OUTPUT->header();
 ?>
 
@@ -9,7 +11,7 @@ echo $OUTPUT->header();
     <header class="bg-blue-700 text-white p-4 shadow">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold">
-                <a href="<?php echo $CFG->wwwroot; ?>"><?php echo format_string($SITE->fullname); ?></a>
+                <a href="<?php echo $CFG->wwwroot; ?>"><?php echo $SITE->fullname; ?></a>
             </h1>
             <?php echo $OUTPUT->login_info(); ?>
         </div>
