@@ -9,10 +9,10 @@ $THEME->enable_dock = false;
 $THEME->yuicssmodules = array();
 
 $THEME->scss = function($theme) {
-    return theme_config::load_scss_from_file(__DIR__ . '/scss/custom.scss');
+    return theme_suayed_get_extra_scss($theme);
 };
 
-$THEME->extracsscallback = 'theme_boost_get_extra_scss';
+$THEME->prescsscallback = 'theme_suayed_get_pre_scss';
 
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks - this is the layout used by default.
